@@ -3,20 +3,21 @@ import PropTypes from "prop-types";
 import "./HyotInput.css";
 
 /**
- * Primary UI component for user interaction
+ * Primary UI component for user input
  */
-export const HyotInput = ({
-  label,
-  type,
-  value,
-  on_change,
-  help_text,
-  error,
-  disabled,
-  icon,
-  icon_position,
-  ...props
-}) => {
+
+export const HyotInput = (props) => {
+  const {
+    label,
+    type,
+    value,
+    on_change,
+    help_text,
+    error,
+    disabled,
+    icon,
+    icon_position,
+  } = props;
   const INIT = "hyotinput-";
   let c_icon_pos = icon ? INIT + "icon-pos--" + icon_position : "",
     c_error = error ? INIT + "error" : "",
@@ -32,11 +33,8 @@ export const HyotInput = ({
       <label>{label}</label>
       <input
         type={type}
-        value={value}
-        onChange={(e) => {
-          console.log(on_change);
-          on_change(e.target.value);
-        }}
+        defaultValue={value}
+        onChange={(e) => on_change(e.target.value)}
         disabled={disabled}
       />
       {help_text && <span className="help-text">{help_text}</span>}
