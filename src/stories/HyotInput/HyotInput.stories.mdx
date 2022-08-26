@@ -1,0 +1,28 @@
+<!-- HyotInput.stories.mdx -->
+
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import { HyotInput } from "./HyotInput";
+
+<Meta title="MDX/HyotInput" component={HyotInput} />
+
+export const Template = (args) => <HyotInput {...args} />;
+
+# HyotInput
+
+List of all type of button
+
+## BASIC
+
+<Canvas>
+  <Story
+    name="Standard"
+    args={{
+      label: "Default input",
+      type: "text",
+      keyup: () => {},
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
