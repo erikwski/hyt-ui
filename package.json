@@ -1,6 +1,14 @@
 {
-  "name": "hyot-ui",
+  "name": "@erikwski/hyot-ui",
+  "description": "React library for the software HyperHyot",
+  "author": "erikwski",
+  "keywords": [
+    "react",
+    "components",
+    "ui"
+  ],
   "version": "0.1.0",
+  "private": true,
   "files": [
     "./dist"
   ],
@@ -69,5 +77,14 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikwski/hyot-ui.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikwski/hyot-ui/issues"
+  },
+  "homepage": "https://github.com/erikwski/hyot-ui#readme"
 }
