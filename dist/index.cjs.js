@@ -2,6 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+require('material-symbols');
 var React = require('react');
 var PropTypes = require('prop-types');
 var styled = require('styled-components');
