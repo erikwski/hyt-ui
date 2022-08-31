@@ -2,7 +2,6 @@
   "name": "@erikwski/hyot-ui",
   "description": "React library for the software HyperHyot",
   "author": "erikwski",
-  "private": false,
   "keywords": [
     "react",
     "components",
