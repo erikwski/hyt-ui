@@ -69,8 +69,12 @@ const WrapperHyotAlert = styled.div`
       background-color: ${danger};
     }
   }
+  &.hyotalert-dismissible {
+    padding-right: 50px;
+  }
   &:hover {
-    filter: brightness(0.8);
+    filter: brightness(0.9);
+    transform: scale(1.1);
   }
 
   .hyotalert-title {
@@ -83,6 +87,7 @@ const WrapperHyotAlert = styled.div`
     fill: #fff;
     position: absolute;
     right: 1rem;
+    top: calc(50% - 12px);
     cursor: pointer;
   }
   .alert-icon {
@@ -96,9 +101,6 @@ const WrapperHyotAlert = styled.div`
         width: 100% !important;
         height: 10px !important;
       }
-    }
-    &.hyotalert-dismissible {
-      padding-right: 24px;
     }
     .hyotalert-title,
     .alert-icon {
@@ -175,7 +177,7 @@ export const HyotAlert = React.forwardRef((props, ref) => {
   let c_type = INIT + "type--" + type,
     c_title = INIT + "title",
     c_message = INIT + "message",
-    c_dismissable = INIT + dismissable ? "dismissible" : "not-dismissible";
+    c_dismissable = INIT + (dismissable ? "dismissible" : "not-dismissible");
   timeout > 0 && setTimeout(removeAlert, timeout);
   return hideMessage ? (
     <></>
