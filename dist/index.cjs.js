@@ -30,42 +30,6 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-
-  var target = _objectWithoutPropertiesLoose(source, excluded);
-
-  var key, i;
-
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-
-  return target;
-}
-
 function _taggedTemplateLiteral(strings, raw) {
   if (!raw) {
     raw = strings.slice(0);
@@ -138,7 +102,6 @@ function _nonIterableRest() {
 }
 
 var primary = "#1ea7fd";
-var primary_opacity = "#1ea8fd3a";
 var secondary = "#423e38";
 var success = "#0ed916";
 var info = "#1e6cfd";
@@ -146,8 +109,6 @@ var warning = "#fda01e";
 var help = "#1efd5a";
 var danger = "#fd1e1e";
 var font_family = "sans-serif";
-
-var _excluded$1 = ["type", "message", "position", "dismissable", "timeout", "onClick"];
 
 var _templateObject$2;
 var WrapperHyotAlert = styled__default["default"].div(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  padding: 24px;\n  border: 2px solid gray;\n  background: #fff;\n  transition: 0.7s ease-in-out;\n  color: rgb(54, 54, 54);\n  position: relative;\n  z-index: 1000;\n  margin: 2rem 0;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  font-family: ", ";\n  animation: scale-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;\n\n  &.color-success {\n    color: ", ";\n  }\n  &.color-warning {\n    color: ", ";\n  }\n  &.color-danger {\n    color: ", ";\n  }\n\n  &.hyotalert-dismissible {\n    padding-right: 50px;\n  }\n  &.cancel-animation {\n    animation: scale-out-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;\n  }\n  &.hyotalert-type--success {\n    color: ", ";\n    &:before {\n      content: \"\";\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 10px;\n      height: 100%;\n      background-color: ", ";\n    }\n  }\n  &.hyotalert-type--warning {\n    color: ", ";\n    &:before {\n      content: \"\";\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 10px;\n      height: 100%;\n      background-color: ", ";\n    }\n  }\n  &.hyotalert-type--error {\n    color: ", ";\n    &:before {\n      content: \"\";\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 10px;\n      height: 100%;\n      background-color: ", ";\n    }\n  }\n  &:hover {\n    filter: brightness(0.8);\n  }\n\n  .hyotalert-title {\n    text-transform: uppercase;\n    text-decoration: underline;\n    font-weight: 600;\n    margin-right: 5px;\n  }\n  .close-alert {\n    fill: #fff;\n    position: absolute;\n    right: 1rem;\n    cursor: pointer;\n  }\n  .alert-icon {\n    margin-right: 10px;\n  }\n  @media (max-width: 800px) {\n    & {\n      flex-direction: column;\n      padding: 20px 10px 10;\n      &:before {\n        width: 100% !important;\n        height: 10px !important;\n      }\n    }\n    &.hyotalert-dismissible {\n      padding-right: 24px;\n    }\n    .hyotalert-title,\n    .alert-icon {\n      margin-right: 0;\n      margin-bottom: 5px;\n    }\n  }\n\n  @keyframes scale-center {\n    0% {\n      transform: scale(0);\n      opacity: 0;\n    }\n    100% {\n      transform: scale(1);\n      opacity: 1;\n    }\n  }\n\n  @keyframes scale-out-center {\n    0% {\n      transform: scale(1);\n      opacity: 1;\n    }\n    100% {\n      transform: scale(0);\n      opacity: 0;\n    }\n  }\n"])), font_family, success, warning, danger, success, success, warning, warning, danger, danger);
@@ -174,23 +135,17 @@ function printIcon(tt) {
   }
 }
 
-var HyotAlert = function HyotAlert(_ref) {
-  var type = _ref.type,
-      message = _ref.message;
-      _ref.position;
-      var dismissable = _ref.dismissable,
-      timeout = _ref.timeout;
-      _ref.onClick;
-      var props = _objectWithoutProperties(_ref, _excluded$1);
-
-  var INIT = "hyotalert-";
-
-  var _useState = React.useState(false),
+var HyotAlert = /*#__PURE__*/React__default["default"].forwardRef(function (props, ref) {
+  var type = props.type,
+      message = props.message,
+      dismissable = props.dismissable,
+      timeout = props.timeout,
+      INIT = "hyotalert-",
+      _useState = React.useState(false),
       _useState2 = _slicedToArray(_useState, 2),
       hideMessage = _useState2[0],
-      setHideMessage = _useState2[1];
-
-  var Alert = React.useRef(null);
+      setHideMessage = _useState2[1],
+      Alert = ref;
 
   var removeAlert = function removeAlert() {
     if (Alert.current) {
@@ -217,7 +172,7 @@ var HyotAlert = function HyotAlert(_ref) {
     className: "close-alert material-symbols-outlined",
     onClick: removeAlert
   }, "close"));
-};
+});
 HyotAlert.propTypes = {
   /**
    * Type of message
@@ -247,25 +202,21 @@ HyotAlert.defaultProps = {
   message: "No message configured"
 };
 
-var _excluded = ["type", "severities", "icon", "position_icon", "shadow", "rounded", "label", "onClick"];
-
 var _templateObject$1;
 var WrapperHyotButton = styled__default["default"].button(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  font-family: ", ";\n  font-weight: 700;\n  border: 0;\n  cursor: pointer;\n  display: inline-block;\n  padding: 10px 2rem;\n  line-height: 1;\n  color: white;\n  background-color: $primary;\n  transition: all 0.7s ease-in-out;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 44px;\n\n  svg {\n    transition: all 0.7s ease-in-out;\n    fill: #fff;\n  }\n\n  &.hyotbtn-sev--primary {\n    background-color: ", ";\n  }\n  &.hyotbtn-sev--secondary {\n    background-color: ", ";\n  }\n  &.hyotbtn-sev--success {\n    background-color: ", ";\n  }\n  &.hyotbtn-sev--info {\n    background-color: ", ";\n  }\n  &.hyotbtn-sev--warning {\n    background-color: ", ";\n    color: #333;\n    svg {\n      fill: #333;\n    }\n  }\n  &.hyotbtn-sev--help {\n    background-color: ", ";\n    color: #333;\n    svg {\n      fill: #333;\n    }\n  }\n  &.hyotbtn-sev--danger {\n    background-color: ", ";\n  }\n  &.hyotbtn-type--link {\n    background-color: white;\n    border: none;\n    color: ", ";\n\n    &:hover {\n      text-decoration: underline;\n    }\n  }\n  &.hyotbtn-center {\n    flex-direction: column;\n  }\n  &.hyotbtn-left span {\n    margin-right: 1rem;\n  }\n  &.hyotbtn-right {\n    flex-direction: row-reverse;\n    span {\n      margin-left: 1rem;\n    }\n  }\n  &.hyotbtn-type--disabled {\n    background-color: gainsboro;\n    border: rgb(139, 139, 139);\n    color: rgb(139, 139, 139);\n    pointer-events: none;\n    &:hover {\n      transform: scale(1);\n    }\n  }\n  &.hyotbtn-rounded--none {\n    border-radius: 0;\n  }\n  &.hyotbtn-rounded--sm {\n    border-radius: 5px;\n  }\n  &.hyotbtn-rounded--md {\n    border-radius: 12px;\n  }\n  &.hyotbtn-rounded--lg {\n    border-radius: 2rem;\n  }\n  &.hyotbtn-rounded--max {\n    border-radius: 100%;\n    aspect-ratio: 1/1;\n    padding: 12px;\n  }\n  &.hyotbtn-shadow--none {\n    box-shadow: none;\n  }\n  &.hyotbtn-shadow--sm {\n    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%),\n      0 3px 1px -2px rgb(0 0 0 / 20%);\n  }\n  &.hyotbtn-shadow--md {\n    box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%),\n      0 2px 4px -1px rgb(0 0 0 / 30%);\n  }\n  &.hyotbtn-shadow--lg {\n    box-shadow: 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%),\n      0 5px 5px -3px rgb(0 0 0 / 30%);\n  }\n  &:hover {\n    transform: scale(1.1);\n  }\n"])), font_family, primary, secondary, success, info, warning, help, danger, primary);
 /**
  * Primary UI component for user interaction
  */
 
-var HyotButton = function HyotButton(_ref) {
-  var type = _ref.type,
-      severities = _ref.severities,
-      icon = _ref.icon,
-      position_icon = _ref.position_icon,
-      shadow = _ref.shadow,
-      rounded = _ref.rounded,
-      label = _ref.label;
-      _ref.onClick;
-      var props = _objectWithoutProperties(_ref, _excluded);
-
+var HyotButton = function HyotButton(props) {
+  var type = props.type,
+      severities = props.severities,
+      icon = props.icon,
+      position_icon = props.position_icon,
+      shadow = props.shadow,
+      rounded = props.rounded,
+      label = props.label,
+      onClick = props.onClick;
   var INIT = "hyotbtn-";
   var c_type = INIT + "type--" + type,
       c_icon_pos = icon ? INIT + position_icon : "",
@@ -275,7 +226,9 @@ var HyotButton = function HyotButton(_ref) {
   return /*#__PURE__*/React__default["default"].createElement(WrapperHyotButton, _extends({
     type: "button",
     className: ["hyotbtn", c_type, c_severities, c_icon_pos, c_shadow, c_rounded].join(" ")
-  }, props), icon && /*#__PURE__*/React__default["default"].createElement("span", {
+  }, props, {
+    onClick: onClick
+  }), icon && /*#__PURE__*/React__default["default"].createElement("span", {
     className: "material-symbols-outlined"
   }, icon), /*#__PURE__*/React__default["default"].createElement("span", null, label));
 };
@@ -332,7 +285,7 @@ HyotButton.defaultProps = {
 };
 
 var _templateObject;
-var WrapperHyotInput = styled__default["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  padding: 10px;\n  display: grid;\n  text-align: start;\n  margin-bottom: 20px;\n  position: relative;\n  font-family: ", ";\n\n  input {\n    height: 46px;\n    border-radius: 4px;\n    border: 1px solid rgb(182, 182, 182);\n\n    &:hover {\n      border-color: ", ";\n    }\n    &:focus-visible {\n      outline: 2px ", ";\n      padding: 2px;\n    }\n  }\n  label {\n    margin: 0px 0 2px 5px;\n  }\n  &.hyotinput-icon-pos {\n    &--left .input-icon,\n    &--right .input-icon {\n      position: absolute;\n      top: 41px;\n      opacity: 0.6;\n      font-size: 32px;\n    }\n    &--left {\n      input {\n        padding-left: 64px;\n      }\n      .input-icon {\n        left: 25px;\n      }\n    }\n    &--right {\n      input {\n        padding-right: 64px;\n      }\n      .input-icon {\n        right: 25px;\n      }\n    }\n  }\n  .help-text {\n    font-size: 14px;\n    padding-left: 1rem;\n    opacity: 0.8;\n  }\n\n  &.hyotinput-disabled {\n    opacity: 0.7;\n    pointer-events: none;\n    label {\n      opacity: 0.7;\n    }\n  }\n\n  &.hyotinput-error {\n    input {\n      border: 2px solid ", ";\n    }\n    .help-text {\n      color: ", ";\n    }\n  }\n"])), font_family, primary, primary_opacity, danger, danger);
+var WrapperHyotInput = styled__default["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  padding: 10px;\n  display: grid;\n  text-align: start;\n  margin-bottom: 20px;\n  position: relative;\n  font-family: ", ";\n\n  input {\n    height: 46px;\n    border-radius: 4px;\n    border: 1px solid rgb(182, 182, 182);\n\n    &:hover {\n      border-color: ", ";\n    }\n    &:focus-visible {\n      border-width: 2px;\n      border-color: ", ";\n    }\n  }\n  label {\n    margin: 0px 0 2px 5px;\n  }\n  &.hyotinput-icon-pos {\n    &--left .input-icon,\n    &--right .input-icon {\n      position: absolute;\n      top: 41px;\n      opacity: 0.6;\n      font-size: 32px;\n    }\n    &--left {\n      input {\n        padding-left: 64px;\n      }\n      .input-icon {\n        left: 25px;\n      }\n    }\n    &--right {\n      input {\n        padding-right: 64px;\n      }\n      .input-icon {\n        right: 25px;\n      }\n    }\n  }\n  .help-text {\n    font-size: 14px;\n    padding-left: 1rem;\n    opacity: 0.8;\n  }\n\n  &.hyotinput-disabled {\n    opacity: 0.7;\n    pointer-events: none;\n    label {\n      opacity: 0.7;\n    }\n  }\n\n  &.hyotinput-error {\n    input {\n      border: 2px solid ", ";\n    }\n    .help-text {\n      color: ", ";\n    }\n  }\n"])), font_family, primary, primary, danger, danger);
 /**
  * Primary UI component for user input
  */

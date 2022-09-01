@@ -19,8 +19,8 @@ const WrapperHyotInput = styled.div`
       border-color: ${primary};
     }
     &:focus-visible {
-      outline: 2px ${primary_opacity};
-      padding: 2px;
+      border-width: 2px;
+      border-color: ${primary};
     }
   }
   label {
