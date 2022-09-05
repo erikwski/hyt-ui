@@ -1,5 +1,5 @@
-export const primary = "#1ea7fd";
-export const primary_opacity = "#1ea8fd3a";
+export const primary = "#424bb2";
+export const primary_opacity = "#a1a6df";
 export const secondary = "#423e38";
 export const success = "#0ed916";
 export const info = "#1e6cfd";

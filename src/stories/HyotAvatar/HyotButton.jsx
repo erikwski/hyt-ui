@@ -10,7 +10,6 @@ import {
   help,
   danger,
   primary,
-  primary_opacity,
 } from "../style";
 const WrapperHyotButton = styled.button`
   font-family: ${font_family};
@@ -27,7 +26,6 @@ const WrapperHyotButton = styled.button`
   justify-content: center;
   align-items: center;
   min-height: 44px;
-  text-transform: uppercase;
 
   svg {
     transition: all 0.7s ease-in-out;
@@ -85,7 +83,7 @@ const WrapperHyotButton = styled.button`
     }
   }
   &.hyotbtn-type--disabled {
-    background-color: ${primary_opacity};
+    background-color: gainsboro;
     border: rgb(139, 139, 139);
     color: rgb(139, 139, 139);
     pointer-events: none;

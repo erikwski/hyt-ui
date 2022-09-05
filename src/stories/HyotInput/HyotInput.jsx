@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { primary, primary_opacity, danger, font_family } from "../style";
+import { primary, danger, font_family } from "../style";
 import styled from "styled-components";
 const WrapperHyotInput = styled.div`
   padding: 10px;
