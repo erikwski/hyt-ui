@@ -1,4 +1,4 @@
 import "material-symbols";
-export { HyotAlert } from "./stories/HyotAlert/HyotAlert.jsx";
-export { HyotButton } from "./stories/HyotButton/HyotButton.jsx";
-export { HyotInput } from "./stories/HyotInput/HyotInput.jsx";
+export { HytAlert } from "./stories/HytAlert/HytAlert.jsx";
+export { HytButton } from "./stories/HytButton/HytButton.jsx";
+export { HytInput } from "./stories/HytInput/HytInput.jsx";

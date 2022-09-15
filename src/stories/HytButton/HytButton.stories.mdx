@@ -1,0 +1,371 @@
+<!-- HytButton.stories.mdx -->
+
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import { HytButton } from "./HytButton";
+
+<Meta title="MDX/HytButton" component={HytButton} />
+
+export const Template = (args) => <HytButton {...args} />;
+
+# HytButton
+
+List of all type of button
+
+## BASIC
+
+<Canvas>
+  <Story
+    name="Standard"
+    args={{
+      label: "Standard",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Disabled"
+    args={{
+      label: "Disabled",
+      type: "disabled",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Link"
+    args={{
+      label: "Link",
+      type: "link",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## ICONS
+
+<Canvas>
+  <Story
+    name="Icon center"
+    args={{
+      icon: "done",
+      label: "",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Icon left"
+    args={{
+      icon: "done",
+      position_icon: "left",
+      label: "Icon left",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Icon right"
+    args={{
+      icon: "done",
+      position_icon: "right",
+      label: "Icon right",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## SEVERITIES
+
+<Canvas>
+  <Story
+    name="Sev primary"
+    args={{
+      severities: "primary",
+      label: "primary",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Sev secondary"
+    args={{
+      severities: "secondary",
+      label: "secondary",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Sev success"
+    args={{
+      severities: "success",
+      label: "success",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Sev info"
+    args={{
+      severities: "info",
+      label: "info",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Sev warning"
+    args={{
+      severities: "warning",
+      label: "warning",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Sev help"
+    args={{
+      severities: "help",
+      label: "help",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Sev danger"
+    args={{
+      severities: "danger",
+      label: "danger",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## SHADOW
+
+<Canvas>
+  <Story
+    name="Raised primary"
+    args={{
+      severities: "primary",
+      label: "primary",
+      shadow: "md",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Raised secondary"
+    args={{
+      severities: "secondary",
+      label: "secondary",
+      shadow: "md",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Raised success"
+    args={{
+      severities: "success",
+      label: "success",
+      shadow: "md",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Raised info"
+    args={{
+      severities: "info",
+      label: "info",
+      shadow: "md",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Raised warning"
+    args={{
+      severities: "warning",
+      label: "warning",
+      shadow: "md",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Raised help"
+    args={{
+      severities: "help",
+      label: "help",
+      shadow: "md",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Raised danger"
+    args={{
+      severities: "danger",
+      label: "danger",
+      shadow: "md",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## ROUNDED
+
+<Canvas>
+  <Story
+    name="Rounded primary"
+    args={{
+      severities: "primary",
+      label: "primary",
+      rounded: "lg",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Rounded secondary"
+    args={{
+      severities: "secondary",
+      label: "secondary",
+      rounded: "lg",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Rounded success"
+    args={{
+      severities: "success",
+      label: "success",
+      rounded: "lg",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Rounded info"
+    args={{
+      severities: "info",
+      label: "info",
+      rounded: "lg",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Rounded warning"
+    args={{
+      severities: "warning",
+      label: "warning",
+      rounded: "lg",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Rounded help"
+    args={{
+      severities: "help",
+      label: "help",
+      rounded: "lg",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Rounded danger"
+    args={{
+      severities: "danger",
+      label: "danger",
+      rounded: "lg",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## ROUNDED ICON BUTTON
+
+<Canvas>
+  <Story
+    name="Icon primary"
+    args={{
+      icon: "bolt",
+      severities: "primary",
+      rounded: "max",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Icon secondary"
+    args={{
+      icon: "radio_button_checked",
+      severities: "secondary",
+      rounded: "max",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Icon success"
+    args={{
+      icon: "done",
+      severities: "success",
+      rounded: "max",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Icon info"
+    args={{
+      icon: "search",
+      severities: "info",
+      rounded: "max",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Icon warning"
+    args={{
+      icon: "swipe_right",
+      severities: "warning",
+      rounded: "max",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Icon help"
+    args={{
+      icon: "more_down",
+      severities: "help",
+      rounded: "max",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Icon danger"
+    args={{
+      icon: "error",
+      severities: "danger",
+      rounded: "max",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
