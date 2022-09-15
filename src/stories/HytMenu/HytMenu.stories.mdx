@@ -1,0 +1,39 @@
+<!-- HytMenu.stories.mdx -->
+
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import { HytMenu } from "./HytMenu.jsx";
+import { HytMenuItem } from "../HytMenuItem/HytMenuItem.jsx";
+
+<Meta title="MDX/HytMenu" component={HytMenu} />
+
+export const Template = (args) => <HytMenu {...args} />;
+export const MenuItem = (args) => <HytMenuItem {...args} />;
+
+# HytMenu
+
+How to render the menu
+
+## BUTTON OF THE MENU
+
+<Canvas>
+  <Story
+    name="Not Expanded"
+    args={{
+      icon: "home",
+      label: "Home",
+    }}
+  >
+    {MenuItem.bind({})}
+  </Story>
+  <Story
+    name="Expanded"
+    args={{
+      expanded: true,
+      icon: "logout",
+      label: "Logout",
+    }}
+  >
+    {MenuItem.bind({})}
+  </Story>
+</Canvas>

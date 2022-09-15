@@ -1,0 +1,34 @@
+<!-- HytLogo.stories.mdx -->
+
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import { HytLogo } from "./HytLogo";
+
+<Meta title="MDX/HytLogo" component={HytLogo} />
+
+export const Template = (args) => <HytLogo {...args} />;
+
+# HytLogo
+
+Two types of the default logo
+
+## Default
+
+<Canvas>
+  <Story name="Standard" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Small version
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{
+      mobile: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
