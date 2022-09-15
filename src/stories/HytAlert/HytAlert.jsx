@@ -133,7 +133,7 @@ const WrapperHytAlert = styled.div`
 `;
 
 /**
- * Primary UI component  for display a message
+ * Used for display a message
  */
 function printIcon(tt) {
   switch (tt) {
@@ -216,7 +216,7 @@ HytAlert.propTypes = {
    */
   timeout: PropTypes.number,
   /**
-   * After that delay the alert will disapper
+   * The text that will get displayed on the alert
    */
   message: PropTypes.string.isRequired,
 };

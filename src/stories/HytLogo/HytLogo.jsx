@@ -27,7 +27,7 @@ export const HytLogo = (props) => {
 
 HytLogo.propTypes = {
   /**
-   * URL of the asse
+   * URL of the asset
    */
   src: PropTypes.string,
   /**
@@ -39,7 +39,7 @@ HytLogo.propTypes = {
    */
   mobile_src: PropTypes.string,
   /**
-   * alternative text
+   * alternative text if the assets doesn't exist
    */
   alt: PropTypes.string,
 };

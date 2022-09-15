@@ -131,7 +131,7 @@ const WrapperHytButton = styled.button`
 `;
 
 /**
- * Primary UI component for user interaction
+ * Primary button of the library
  */
 export const HytButton = (props) => {
   const {
@@ -196,19 +196,19 @@ HytButton.propTypes = {
    */
   position_icon: PropTypes.oneOf(["center", "left", "right"]),
   /**
-   * How large should the button be?
+   * box-shadow of the button
    */
   shadow: PropTypes.oneOf(["none", "sm", "md", "lg"]),
   /**
-   * Border radius of the button?
+   * Border radius of the button
    */
   rounded: PropTypes.oneOf(["none", "sm", "md", "lg", "max"]),
   /**
-   * HytButton contents
+   * Text inside the button
    */
   label: PropTypes.string.isRequired,
   /**
-   * Optional click handleraddon-docs
+   * Function that get triggered onClick
    */
   onClick: PropTypes.func,
 };

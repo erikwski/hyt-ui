@@ -76,7 +76,7 @@ const WrapperHytInput = styled.div`
 `;
 
 /**
- * Primary UI component for user input
+ * Basic input of the library
  */
 
 export const HytInput = (props) => {
