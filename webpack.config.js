@@ -1,10 +1,31 @@
 const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
   entry: "./src/index.js",
+  mode: "development",
+  externals: [nodeExternals()],
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "hyt-ui.js",
-    library: "hyt-ui",
+    path: path.join(__dirname, "./dist/"),
+    filename: "hyt-u.js",
+    library: ["hyt-ui"],
+    libraryTarget: "umd",
+    publicPath: "/dist/",
+  },
+  plugins: [new CleanWebpackPlugin()],
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
+      },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+        include: path.resolve(__dirname, "./src"),
+      },
+    ],
   },
 };
